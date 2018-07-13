@@ -8,6 +8,9 @@ class CList
 {
 public:
     CList();
+
+    void push_back(T date);
+    int getSize();
 private:
 
     int mSize;
@@ -25,6 +28,28 @@ CList<T>::CList()
 {
 
 }
-
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+void CList<T>::push_back(T date)
+////////////////////////////////////////////////////////////////////////////////////
+{
+    if (mHead == nullptr){
+        mHead =  new CNode<T>(date);
+    } else{
+        CNode<T> *current = mHead;
+        while (current->mPtrNextNode != nullptr) {
+            current = current->mPtrNextNode;
+        }
+        current->mPtrNextNode = new CNode<T>(date);
+    }
+    mSize++;
+}
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+int CList<T>::getSize()
+////////////////////////////////////////////////////////////////////////////////////
+{
+    return mSize;
+}
 
 #endif // CLIST_HPP
