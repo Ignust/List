@@ -1,9 +1,11 @@
 #include <iostream>
+#include"CList.hpp"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    CList<int> mList();
+
     return 0;
 }
