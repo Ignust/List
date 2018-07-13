@@ -11,6 +11,7 @@ public:
 
     void push_back(T date);
     int getSize();
+    T& operator[](const int index);
 private:
 
     int mSize;
@@ -50,6 +51,20 @@ int CList<T>::getSize()
 ////////////////////////////////////////////////////////////////////////////////////
 {
     return mSize;
+}
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+T& CList<T>::operator [](const int index)
+////////////////////////////////////////////////////////////////////////////////////
+{
+    CNode<T> *current = mHead;
+    while (current != nullptr) {
+        for(int i = 0; i < index;i++){
+            current = current->mPtrNextNode;
+        }
+        return current->mDate;
+    }
+
 }
 
 #endif // CLIST_HPP

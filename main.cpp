@@ -11,5 +11,9 @@ int main()
     mList.push_back(44);
     mList.push_back(433);
 
+    for(int i = 0;i < mList.getSize(); i ++){
+        cout << mList[i] << endl;
+    }
+
     return 0;
 }
