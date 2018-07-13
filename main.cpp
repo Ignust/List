@@ -26,7 +26,7 @@ int main()
     mList.push_front(3);
     mList.push_front(4);
     for(int i = 0;i < mList.getSize(); i ++){
-        cout << mList[i] << endl;
+        cout << mList[i] << endl; // lol
     }
 
     return 0;
