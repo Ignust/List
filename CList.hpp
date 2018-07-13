@@ -15,6 +15,7 @@ public:
     T& operator[](const int index);
     void pop_front();
     void clear();
+    void push_front(T date);
 private:
 
     int mSize;
@@ -95,6 +96,15 @@ CList<T>::~CList()
 ////////////////////////////////////////////////////////////////////////////////////
 {
     clear();
+}
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+void CList<T>::push_front(T date)
+////////////////////////////////////////////////////////////////////////////////////
+{
+    CNode<T> *current = mHead;
+    mHead = new CNode<T>(date,current);
+    mSize++;
 }
 
 #endif // CLIST_HPP
