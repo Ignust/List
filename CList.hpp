@@ -18,7 +18,7 @@ public:
     void push_front(T date);
     void insert(T value, int index);
     void removeAt(int index);
-
+    void pop_back();
 private:
 
     int mSize;
@@ -145,6 +145,13 @@ void CList<T>::removeAt(int index)
     delete remove;
     mSize--;
 
+}
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+void CList<T>::pop_back()
+////////////////////////////////////////////////////////////////////////////////////
+{
+    removeAt(mSize - 1);
 }
 
 #endif // CLIST_HPP
