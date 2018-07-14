@@ -36,5 +36,11 @@ int main()
         cout << mList[i] << endl; // lol
     }
 
+    cout << "mList.removeAt(1)" << endl;
+    mList.removeAt(1);
+    for(int i = 0;i < mList.getSize(); i ++){
+        cout << mList[i] << endl; // lol
+    }
+
     return 0;
 }

@@ -17,6 +17,8 @@ public:
     void clear();
     void push_front(T date);
     void insert(T value, int index);
+    void removeAt(int index);
+
 private:
 
     int mSize;
@@ -119,9 +121,29 @@ void CList<T>::insert(T value, int index)
     for(int i = 0; i < index - 1; i++){
         previous = previous->mPtrNextNode;
     }
-    CNode<T> *newNode = new CNode<T>(value,previous->mPtrNextNode);
-    previous->mPtrNextNode = newNode;
+
+    previous->mPtrNextNode = new CNode<T>(value,previous->mPtrNextNode);
     mSize++;
+
+}
+template<typename T>
+////////////////////////////////////////////////////////////////////////////////////
+void CList<T>::removeAt(int index)
+////////////////////////////////////////////////////////////////////////////////////
+{
+    if (index == 0){
+        pop_front();
+    }
+
+    CNode<T> *previous = mHead;
+    for(int i = 0; i < index - 1; i++){
+        previous = previous->mPtrNextNode;
+    }
+
+    CNode<T> *remove = previous->mPtrNextNode;
+    previous->mPtrNextNode = remove->mPtrNextNode;
+    delete remove;
+    mSize--;
 
 }
 
