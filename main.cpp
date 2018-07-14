@@ -29,5 +29,12 @@ int main()
         cout << mList[i] << endl; // lol
     }
 
+    cout << "mList.insert(5,1)" << endl;
+    mList.insert(5,1);
+
+    for(int i = 0;i < mList.getSize(); i ++){
+        cout << mList[i] << endl; // lol
+    }
+
     return 0;
 }
